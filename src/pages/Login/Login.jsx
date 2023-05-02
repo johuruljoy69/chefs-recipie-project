@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
@@ -8,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation()
     console.log('login page location', location);
-    const from = location.state?.from?.pathname || '/category/0'
+    const from = location.state?.from?.pathname || '/home' ;
 
 
     const handleLogin = (event) => {
