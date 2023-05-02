@@ -30,9 +30,9 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal flex gap-5 items-center">
-                        <Link className='hover:text-purple-700' to='/'><li>Home</li></Link>
-                        <Link className='hover:text-purple-700' to='/about'><li>About</li></Link>
-                        <Link className='hover:text-purple-700' to='/blog'><li>Blog</li></Link>
+                        <Link className=' hover:text-purple-700' to='/'><li>Home</li></Link>
+                        <Link className=' hover:text-purple-700' to='/about'><li>About</li></Link>
+                        <Link className=' hover:text-purple-700' to='/blog'><li>Blog</li></Link>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -53,8 +53,8 @@ const Header = () => {
                     </div>}
 
                     {user ?
-                        <button onClick={handleLogout} className='px-7 py-2 mx-3 text-white font-semibold bg-gray-600 '>Logout</button> :
-                        <Link to='/login'><button className='px-7 py-2 mx-3 text-white font-semibold bg-gray-600 '>Login</button></Link>
+                        <button onClick={handleLogout} className='px-7 py-2 mx-3 text-white font-semibold bg-purple-700 '>Logout</button> :
+                        <Link to='/login'><button className='px-7 py-2 mx-3 text-white font-semibold bg-purple-700 '>Login</button></Link>
                     }
                 </div>
             </div>

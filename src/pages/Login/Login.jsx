@@ -94,14 +94,14 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                             <p>Don't have an Account? <Link className='text-purple-600' to='/register'>Please Register</Link></p>
-                            <div class="inline-flex items-center justify-center w-full">
-                                <hr class="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
-                                <div class="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+                            <div className="inline-flex items-center justify-center w-full">
+                                <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
+                                <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
                                     <p className='text-xl font-semibold' >or</p>
                                 </div>
                             </div>
-                            <button onClick={handleGoogleSignIn}  className="btn btn-outline mb-3"><FaGoogle /><span className='ps-2'>Login with Google</span> </button>
-                            <button onClick={handleGitHubSignIn}  className="btn btn-outline btn-primary mb-3"><FaGithub /><span className='ps-2'>Login with GitHub</span> </button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline mb-3"><FaGoogle /><span className='ps-2'>Login with Google</span> </button>
+                            <button onClick={handleGitHubSignIn} className="btn btn-outline btn-primary mb-3"><FaGithub /><span className='ps-2'>Login with GitHub</span> </button>
                         </div>
                     </form>
                 </div>
