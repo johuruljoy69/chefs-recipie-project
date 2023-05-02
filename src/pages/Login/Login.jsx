@@ -10,7 +10,7 @@ const Login = () => {
     const [success, setSuccess] = useState('')
     const navigate = useNavigate();
     const location = useLocation()
-    console.log('login page location', location);
+    // console.log('login page location', location);
     const from = location.state?.from?.pathname || '/home';
 
     const auth = getAuth(app);

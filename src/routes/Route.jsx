@@ -63,7 +63,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: 'chefs',
+    path: '/chefs',
     element: <ChefLayout></ChefLayout>,
     children: [
       {
