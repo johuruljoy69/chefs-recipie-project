@@ -36,7 +36,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                setSuccess('Create Account Successfully')
+                setSuccess('Account Create Successfully')
                 form.reset();
 
             })
