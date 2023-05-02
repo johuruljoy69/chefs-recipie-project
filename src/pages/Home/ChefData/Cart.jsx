@@ -11,7 +11,7 @@ const Cart = ({chef}) => {
                 <h2 className="card-title">{name}</h2>
                 <p><span className='font-semibold'>Year of experience:</span> {experience} </p>
                 <p><span className='font-semibold'>Numbers of recipes:</span> {recipes} </p>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center mt-5">
                     <FcLike style={{ fontSize: '1.5rem' }}></FcLike>
                     <p className='ps-2'>{likes} Likes </p>
                     <Link to={`/chefs/${id}`}><button className="btn bg-purple-700">View Recipes</button></Link>
