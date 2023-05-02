@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Register = () => {
+    const [errorPassword, setErrorPassword] = useState('')
+    const [success, setSuccess] = useState('');
+    const [accepted, setAccepted] = useState(false)
 
-    const[accepted, setAccepted] = useState(false)
+    const { createUser } = useContext(AuthContext);
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -11,11 +15,38 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const confirm = form.confirm.value;
-        console.log(name, email, password, confirm);
+        console.log(name, email, password);
+        setSuccess('')
+        setErrorPassword('')
+
+        if (password.length < 8) {
+            setErrorPassword('Please input min 8 character')
+            return;
+        }
+        else if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+            setErrorPassword('Please provide two capital letter')
+            return;
+        }
+        else if (!/(?=.*[!@#$&*])/.test(password)) {
+            setErrorPassword('Please provide one special Character')
+            return;
+        }
+
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                setSuccess('Create Account Successfully')
+                form.reset();
+
+            })
+            .catch(error => {
+                console.log(error.message)
+                setSuccess('')
+            })
     }
 
-    const handleAccepted = (event) =>{
+    const handleAccepted = (event) => {
         setAccepted(event.target.checked)
     }
 
@@ -50,15 +81,15 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="Enter your password" name='password' className="input input-bordered" />
+                                <input type="password" placeholder="Enter your password" name='password' className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type="password" placeholder="Enter confirm password" name='confirm' className="input input-bordered" />
+                                <input type="password" placeholder="Enter confirm password" name='confirm' className="input input-bordered" required />
                             </div>
-                            {/* <p className='text-red-500'><small>{errorPassword}</small></p> */}
+                            <p className='text-red-500'><small>{errorPassword}</small></p>
                             <div className="form-control">
                                 <label className="label">
                                     <input onClick={handleAccepted} type='checkbox' />
@@ -67,7 +98,7 @@ const Register = () => {
                                 </label>
 
                             </div>
-                            {/* <p className='text-green-500'><small>{success}</small></p> */}
+                            <p className='text-green-500'><small>{success}</small></p>
                             <div className="form-control mt-6">
                                 <button disabled={!accepted} className="btn btn-primary">Register</button>
                             </div>
