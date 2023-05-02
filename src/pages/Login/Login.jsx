@@ -1,39 +1,55 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const handleLogin = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+    }
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <div className='container mx-auto mt-12 mb-12'>
+            <div className="hero min-h-screen">
+                <div className="hero-content border p-24 flex-col ">
+                    <div className="text-center">
+                        <h1 className="text-5xl font-bold mb-5">Login your account now!</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form onSubmit={handleLogin}  className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="text" placeholder="Enter your email address" name='email' className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <input type="password" placeholder="Enter your password" name='password' className="input input-bordered" />
                             </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <input type='checkbox' />
+                                    <p className="label-text ps-2">Remember Me </p>
+
+                                </label>
+
+                            </div>
+                            {/* <p className='text-green-500'><small>{success}</small></p> */}
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <p><small>Don't have an Account? <Link className='text-purple-600' to='/register'>Please Register</Link></small></p>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+
     );
 };
 
