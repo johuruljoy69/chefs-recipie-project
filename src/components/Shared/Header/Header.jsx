@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Header = () => {
+    const { user, logoutUser } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logoutUser()
+            .then(result => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div className='container mx-auto'>
             <div className="navbar bg-base-100">
@@ -27,7 +36,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
+                    {user && <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle border avatar">
                             <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                         </label>
@@ -41,8 +50,12 @@ const Header = () => {
                             <li><a>Settings</a></li>
                             <li><a>Logout</a></li>
                         </ul>
-                    </div>
-                    <Link to='/login'><button className='px-5 py-1 mx-3 text-white font-semibold rounded bg-purple-700 '>Login</button></Link>
+                    </div>}
+
+                    {user ?
+                        <button onClick={handleLogout} className='px-7 py-2 mx-3 text-white font-semibold bg-gray-600 '>Logout</button> :
+                        <Link to='/login'><button className='px-7 py-2 mx-3 text-white font-semibold bg-gray-600 '>Login</button></Link>
+                    }
                 </div>
             </div>
         </div>
