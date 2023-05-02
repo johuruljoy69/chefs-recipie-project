@@ -8,6 +8,8 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Blog from "../pages/Blog/Blog";
 import ChefCart from "../pages/Home/ChefData/ChefCart";
+import ChefLayout from "../layouts/ChefLayout";
+import ChefDetails from "../pages/Home/ChefData/ChefDetails";
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,17 @@ const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path: 'chefs',
+    element: <ChefLayout></ChefLayout>,
+    children: [
+      {
+        path: ':id',
+        element: <ChefDetails></ChefDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+      }
+    ]
+  }
 ]);
 
 export default router;

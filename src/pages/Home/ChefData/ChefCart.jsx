@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from 'react';
+import Cart from './Cart';
 
 
 const ChefCart = () => {
     const [chefsData, setChefsData] = useState([]);
-    useEffect(() =>{
+    useEffect(() => {
         fetch('http://localhost:5000/chefs')
-        .then(res => res.json())
-        .then(data => setChefsData(data))
-    },[])
-    console.log(chefsData);
+            .then(res => res.json())
+            .then(data => setChefsData(data))
+            .catch(error => error.message)
+    }, [])
+    // console.log(chefsData);
 
     return (
-        <div className='container mx-auto mt-12'>
-            <h2 className='text-3xl font-bold text-center mb-10 text-purple-700'>World Famous Chef : {chefsData.length}  </h2>
+        <div className='container mx-auto mt-20 mb-20'>
+            <div className='text-center mb-14 mx-10'>
+                <h2 className='text-4xl font-bold  text-purple-700 mb-5'>Most Popular Chefs </h2>
+                <p>There are many popular chefs in the world, each with their own unique style and approach to cooking. Some of the most famous chefs include:</p>
+            </div>
             <div className='grid lg:grid-cols-3 gap-12'>
-                {chefsData?.map((chef) => (
-                    <div className="card card-compact w-100 bg-base-100 shadow-xl">
-                    <figure><img className='h-100 w-100' src={chef?.picture} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">{chef?.name}</h2>
-                        <p><span className='font-semibold'>Year of experience:</span> {chef?.experience} </p>
-                        <p><span className='font-semibold'>Numbers of recipes:</span> {chef?.recipes} </p>
-                        <div className="flex justify-between items-center">
-                            <p>Likes</p>
-                            <button className="btn btn-primary">View Recipe Details</button>
-                        </div>
-                    </div>
-                </div>   
-                ) )}            
-                
+                {chefsData?.map((chef) => <Cart
+                key={chef.id}
+                chef={chef}
+                ></Cart> )}
+
             </div>
         </div>
     );
