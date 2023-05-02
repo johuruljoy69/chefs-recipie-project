@@ -57,7 +57,7 @@ const Register = () => {
     return (
         <div className='container mx-auto mt-12 mb-12'>
             <div className="hero min-h-screen">
-                <div className="hero-content border p-24 flex-col ">
+                <div className="hero-content border p-12 flex-col ">
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mb-5">Register your account now!</h1>
                     </div>
@@ -106,7 +106,7 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <button disabled={!accepted} className="btn btn-primary">Register</button>
                             </div>
-                            <p><small>Already Have an Account? <Link className='text-purple-600' to='/login'>Please Login</Link></small></p>
+                            <p>Already Have an Account? <Link className='text-purple-600' to='/login'>Please Login</Link></p>
                         </div>
                     </form>
                 </div>
