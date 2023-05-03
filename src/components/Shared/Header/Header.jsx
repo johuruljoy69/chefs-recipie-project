@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Header = () => {
@@ -29,10 +28,12 @@ const Header = () => {
                     <a className="btn btn-ghost normal-case text-2xl font-bold text-purple-700">JS FoodHub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal flex gap-5 items-center">
-                        <Link className=' hover:text-purple-700' to='/'><li>Home</li></Link>
-                        <Link className=' hover:text-purple-700' to='/about'><li>About</li></Link>
-                        <Link className=' hover:text-purple-700' to='/blog'><li>Blog</li></Link>
+                    <ul className="menu menu-horizontal font-semibold text-gray-500 flex gap-5 items-center">
+
+                        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/home">Home</NavLink>
+                        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/about">About</NavLink>
+                        <NavLink className={({ isActive }) => (isActive ? 'text-purple-700' : '')} to="/blog">Blog</NavLink>
+
                     </ul>
                 </div>
 
