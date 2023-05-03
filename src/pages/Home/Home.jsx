@@ -1,6 +1,7 @@
 import React from 'react';
 import ChefCart from './ChefData/ChefCart';
-import PopularRecipe from './PopularRecipe';
+import PopularRecipe from './Recipes/PopularRecipe';
+
 
 const Home = () => {
 
@@ -38,12 +39,12 @@ const Home = () => {
             </div> */}
 
             <div style={{
-                backgroundImage: `url("https://i.ibb.co/d72jv27/banner-3.jpg")`, backgroundSize: 'cover',
+                backgroundImage: `url("https://i.ibb.co/zxmnMv7/Banner-img-2.jpg")`, backgroundSize: 'cover',
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat', }}  >
                 <div className='container mx-auto pt-24 pb-24'>
-                    <h2 className='text-center text-7xl text-purple-900 font-bold'>JS FoodHub</h2>
-                    <p className='text-center lg:text-xl font-semibold text-white mx-auto border mt-7 w-2/3'>JS FoodHub Restaurant is a physical establishment that offers delicious food and drinks to its customers. The restaurant is part of the JS FoodHub brand, which also includes the online food ordering platform discussed earlier.</p>
+                    <h2 className='text-center lg:text-8xl text-6xl text-white font-bold'>JS FoodHub</h2>
+                    <p className='text-center lg:text-2xl font-semibold text-purple-900 mx-auto border mt-7 w-10/12'>JS FoodHub Restaurant is a physical establishment that offers delicious food and drinks to its customers. The restaurant is part of the JS FoodHub brand, which also includes the online food ordering platform discussed earlier.</p>
                 </div>
             </div>
 

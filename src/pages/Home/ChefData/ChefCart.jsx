@@ -18,19 +18,14 @@ const ChefCart = () => {
                 <h2 className='text-4xl font-bold mx-auto text-purple-700 mb-5'>Most Popular Chefs </h2>
                 <p className='w-2/3 text-center mx-auto'>There are many popular chefs in the world, each with their own unique style and approach to cooking. Some of the most famous chefs include:</p>
             </div>
-            <div style={{
-                backgroundImage: `url("https://i.ibb.co/tC8K7ZL/banner-1.jpg")`, backgroundSize: 'cover',
-                backgroundPosition: 'center center',
-                backgroundRepeat: 'no-repeat',
-            }}  >
-                <div className='container mx-auto grid lg:grid-cols-3 gap-6 pt-10 pb-10'>
-                    {chefsData?.map((chef) => <Cart
-                        key={chef.id}
-                        chef={chef}
-                    ></Cart>)}
-                </div>
 
+            <div className='container mx-auto grid lg:grid-cols-3 gap-6 pt-10 pb-10'>
+                {chefsData?.map((chef) => <Cart
+                    key={chef.id}
+                    chef={chef}
+                ></Cart>)}
             </div>
+
         </div>
     );
 };
