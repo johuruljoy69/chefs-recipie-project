@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-console.log('env key', import.meta.env.VITE_apiKey);
+
 // const firebaseConfig = {
 //   apiKey: import.meta.env.VITE_apiKey,
 //   authDomain: import.meta.env.VITE_authDomain,
@@ -15,12 +15,12 @@ console.log('env key', import.meta.env.VITE_apiKey);
 // };
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC-f9E-6TZzK6IS7k_AZh4U9Vc81uuLq90",
-  authDomain: "js-foodhub-project.firebaseapp.com",
-  projectId: "js-foodhub-project",
-  storageBucket: "js-foodhub-project.appspot.com",
-  messagingSenderId: "458336258101",
-  appId: "1:458336258101:web:20541a3ae3c1ff7479897c"
+  apiKey: "AIzaSyADyEqDFBbQYu787GkXF4YVkBQO9_8g16c",
+  authDomain: "js-foodhub-project-23a51.firebaseapp.com",
+  projectId: "js-foodhub-project-23a51",
+  storageBucket: "js-foodhub-project-23a51.appspot.com",
+  messagingSenderId: "618010604353",
+  appId: "1:618010604353:web:54833b956804aef459e7c0"
 };
 
 // Initialize Firebase

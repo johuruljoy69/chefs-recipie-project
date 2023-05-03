@@ -1,6 +1,7 @@
 import React from 'react';
 import ChefCart from './ChefData/ChefCart';
 import PopularRecipe from './Recipes/PopularRecipe';
+import RecipeCategory from './Recipes/RecipeCategory';
 
 
 const Home = () => {
@@ -49,6 +50,8 @@ const Home = () => {
             </div>
 
             <ChefCart></ChefCart>
+
+            <RecipeCategory></RecipeCategory>
 
             <PopularRecipe></PopularRecipe>
 

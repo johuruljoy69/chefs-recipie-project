@@ -35,26 +35,27 @@ const Header = () => {
                         <Link className=' hover:text-purple-700' to='/blog'><li>Blog</li></Link>
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    {user && <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle border avatar">
-                            <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
+
+                <div className="navbar-end flex items-center space-x-2">
+                    {user && <div className="dropdown dropdown-end tooltip tooltip-left" data-tip={user.displayName}>
+                        <label tabIndex={0} className=" btn-circle w-10 h-10 ">
+                            <img className='rounded-full w-10' src={user.photoURL} alt="" />
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60">
                             <li>
                                 <a className="justify-between">
-                                    Profile
+                                    <h3>{user.displayName}</h3>
                                     <span className="badge">New</span>
                                 </a>
                             </li>
                             <li><a>Settings</a></li>
-                            <button onClick={handleLogout} className='px-5 py-2 mx-1 text-white font-semibold rounded-lg bg-purple-700 '>Logout</button>
+                            <li><button onClick={handleLogout} className='btn btn-ghost text-purple-700 font-semibold rounded-lg '>Logout</button></li>
                         </ul>
                     </div>}
 
                     {user ?
-                        <button onClick={handleLogout} className='px-5 py-2 mx-1 text-white font-semibold rounded-lg bg-purple-700 '>Logout</button> :
-                        <Link to='/login'><button className='px-5 py-2 mx-1 text-white font-semibold rounded-lg bg-purple-700 '>Login</button></Link>
+                        <button onClick={handleLogout} className='px-5 py-2 text-white font-semibold rounded-lg bg-purple-700 '>Logout</button> :
+                        <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-purple-700 '>Login</button></Link>
                     }
                 </div>
             </div>

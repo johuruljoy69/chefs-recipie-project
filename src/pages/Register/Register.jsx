@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 
 const Register = () => {
     const [errorPassword, setErrorPassword] = useState('')
@@ -12,13 +15,41 @@ const Register = () => {
     // console.log('login page location', location);
     const from = location.state?.from?.pathname || '/home';
 
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+
+    const handleGitHubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.error(error.message);
+            })
+    }
+
     const handleRegister = (event) => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password);
+        const confirm = form.confirm.value;
+        const photoURL = form.photoURL.value;
+        console.log(name, email, password, confirm, photoURL);
         setSuccess('')
         setErrorPassword('')
 
@@ -73,7 +104,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" placeholder="Enter your photo url" name='photo' className="input input-bordered" />
+                                <input type="text" placeholder="Enter your photo url" name='photoURL' className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -107,6 +138,14 @@ const Register = () => {
                                 <button disabled={!accepted} className="btn btn-primary">Register</button>
                             </div>
                             <p>Already Have an Account? <Link className='text-purple-600' to='/login'>Please Login</Link></p>
+                            <div className="inline-flex items-center justify-center w-full">
+                                <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
+                                <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
+                                    <p className='text-xl font-semibold' >or</p>
+                                </div>
+                            </div>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline mb-3"><FaGoogle /><span className='ps-2'>SignUp with Google</span> </button>
+                            <button onClick={handleGitHubSignIn} className="btn btn-outline btn-primary mb-3"><FaGithub /><span className='ps-2'>SignUp with GitHub</span> </button>
                         </div>
                     </form>
                 </div>
