@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FcLike } from 'react-icons/fc';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipesCart = ({ recipes }) => {
     const { id, recipeName, img_url, description, rating, likes } = recipes;
@@ -8,6 +10,8 @@ const RecipesCart = ({ recipes }) => {
 
     const handleDisabled = () => {
         setIsDisabled(true)
+        toast.success("Wow! Favorite added successfully")
+        console.log(toast);
     }
 
     return (
@@ -29,6 +33,7 @@ const RecipesCart = ({ recipes }) => {
                     >
                         {isDisabled ? "Favorite" : "Favorite"}
                     </button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>

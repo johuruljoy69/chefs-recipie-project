@@ -38,7 +38,7 @@ const Header = () => {
 
                 <div className="navbar-end flex items-center space-x-2">
                     {user && <div className="dropdown dropdown-end tooltip tooltip-left" data-tip={user.displayName}>
-                        <label tabIndex={0} className=" btn-circle w-10 h-10 ">
+                        <label tabIndex={0} className=" btn-circle">
                             <img className='rounded-full w-10' src={user.photoURL} alt="" />
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-60">

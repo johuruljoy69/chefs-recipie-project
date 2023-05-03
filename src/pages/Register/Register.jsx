@@ -4,6 +4,8 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const [errorPassword, setErrorPassword] = useState('')
@@ -24,6 +26,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                toast.success("Wow! Account Create successfully")
             })
             .catch(error => {
                 console.error(error.message);
@@ -35,6 +38,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                toast.success("Wow! Account Create successfully")
             })
             .catch(error => {
                 console.error(error.message);
@@ -52,6 +56,7 @@ const Register = () => {
         console.log(name, email, password, confirm, photoURL);
         setSuccess('')
         setErrorPassword('')
+        toast.success("Wow! Account Create successfully")
 
         if (password.length < 8) {
             setErrorPassword('Please input min 8 character')
@@ -136,6 +141,7 @@ const Register = () => {
                             <p className='text-green-500'><small>{success}</small></p>
                             <div className="form-control mt-6">
                                 <button disabled={!accepted} className="btn btn-primary">Register</button>
+                                <ToastContainer />
                             </div>
                             <p>Already Have an Account? <Link className='text-purple-600' to='/login'>Please Login</Link></p>
                             <div className="inline-flex items-center justify-center w-full">

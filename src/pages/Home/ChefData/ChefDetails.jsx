@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FcLike } from 'react-icons/fc';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ChefDetails = () => {
@@ -11,6 +13,7 @@ const ChefDetails = () => {
     const [isDisabled, setIsDisabled] = useState(false);
 
     const handleDisabled = () => {
+        toast("Wow! You add Favorite successfully")
         setIsDisabled(true)
     }
 
@@ -39,6 +42,7 @@ const ChefDetails = () => {
                         >
                             {isDisabled ? "Favorite" : "Favorite"}
                         </button>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>
@@ -68,6 +72,7 @@ const ChefDetails = () => {
                             >
                                 {isDisabled ? "Favorite" : "Favorite"}
                             </button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
@@ -92,6 +97,7 @@ const ChefDetails = () => {
                             >
                                 {isDisabled ? "Favorite" : "Favorite"}
                             </button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
@@ -116,6 +122,7 @@ const ChefDetails = () => {
                             >
                                 {isDisabled ? "Favorite" : "Favorite"}
                             </button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>

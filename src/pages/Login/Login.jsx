@@ -4,6 +4,8 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle, FaGithub} from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {     
     const { loginUser } = useContext(AuthContext);
@@ -22,6 +24,7 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
+            toast.success("Wow! User Login successfully")
         })
         .catch(error =>{
             console.error(error.message);
@@ -33,6 +36,7 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
+            toast.success("Wow! User Login successfully")
         })
         .catch(error =>{
             console.error(error.message);
@@ -47,6 +51,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         setSuccess('')
+        toast.success("Wow! You Login successfully")
 
         loginUser(email, password)
             .then(result => {
@@ -92,6 +97,7 @@ const Login = () => {
                             <p className='text-green-500'><small>{success}</small></p>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+                                <ToastContainer />
                             </div>
                             <p>Don't have an Account? <Link className='text-purple-600' to='/register'>Please Register</Link></p>
                             <div className="inline-flex items-center justify-center w-full">
