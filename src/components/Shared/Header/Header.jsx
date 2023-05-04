@@ -25,7 +25,7 @@ const Header = () => {
                             <Link className='hover:text-purple-700' to='/blog'><li>Blog</li></Link>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-2xl font-bold text-purple-700">JS FoodHub</a>
+                    <a className="btn btn-ghost normal-case text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600">JS FoodHub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal font-semibold text-gray-500 flex gap-5 items-center">
@@ -55,8 +55,8 @@ const Header = () => {
                     </div>}
 
                     {user ?
-                        <button onClick={handleLogout} className='px-5 py-2 text-white font-semibold rounded-lg bg-purple-700 hover:bg-purple-900 '>Logout</button> :
-                        <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-purple-700 hover:bg-purple-900 '>Login</button></Link>
+                        <button onClick={handleLogout} className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>Logout</button> :
+                        <Link to='/login'><button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>Login</button></Link>
                     }
                 </div>
             </div>

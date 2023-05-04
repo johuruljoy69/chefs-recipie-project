@@ -20,7 +20,7 @@ const ChefDetails = () => {
 
     return (
         <div className='container mx-auto mt-12 mb-12'>
-            <div className=" w-100 bg-green-300 rounded-lg p-10">
+            <div className=" w-100 rounded-lg p-10 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
                 <LazyLoad height={300} width={400} threshold={0.95}>
                     <img className=' rounded-3xl' src={picture} />
                 </LazyLoad>
@@ -41,7 +41,7 @@ const ChefDetails = () => {
                         <button
                             onClick={handleDisabled}
                             disabled={isDisabled}
-                            className={`bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded-lg ${isDisabled ? "opacity-50 cursor-not-allowed" : ""
+                            className={`text-white font-bold py-2 px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 rounded-lg ${isDisabled ? "opacity-50 cursor-not-allowed" : ""
                                 }`}
                         >
                             {isDisabled ? "Favorite" : "Favorite"}

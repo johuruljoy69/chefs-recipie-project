@@ -12,7 +12,7 @@ const PopularRecipe = () => {
 
     return (
         <div className='mt-12'>
-            <h2 className='text-4xl font-bold text-center mx-auto text-purple-700 mb-5'>Most Popular Recipes</h2>
+            <h2 className='text-4xl text-center mx-auto font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 mb-5'>Most Popular Recipes</h2>
             <p className='text-center mx-auto mb-10 w-2/3'>The most popular recipes in restaurants can vary depending on the type of cuisine and location, but here are some common dishes that are often ordered</p>
             <div style={{
                 backgroundImage: `url("https://i.ibb.co/XJtvk3C/banner-4.jpg")`, backgroundSize: 'cover',

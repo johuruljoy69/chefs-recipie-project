@@ -14,7 +14,7 @@ const Cart = ({ chef }) => {
                 <div className="flex justify-between items-center mt-5">
                     <FcLike style={{ fontSize: '1.5rem' }}></FcLike>
                     <p className='ps-2'>{likes} Likes </p>
-                    <Link to={`/chefs/${id}`}><button className="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded-lg">View Recipes</button></Link>
+                    <Link to={`/chefs/${id}`}><button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-lg">View Recipes</button></Link>
                 </div>
             </div>
         </div>

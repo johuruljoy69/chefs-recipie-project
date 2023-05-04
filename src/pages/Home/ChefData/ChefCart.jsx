@@ -15,7 +15,7 @@ const ChefCart = () => {
     return (
         <div className=' mt-20 mb-20'  >
             <div className='text-center mb-14 mx-10'>
-                <h2 className='text-4xl font-bold mx-auto text-purple-700 mb-5'>Most Popular Chefs </h2>
+                <h2 className='text-4xl mx-auto font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 mb-5'>Most Popular Chefs </h2>
                 <p className='w-2/3 text-center mx-auto'>There are many popular chefs in the world, each with their own unique style and approach to cooking. Some of the most famous chefs</p>
             </div>
 

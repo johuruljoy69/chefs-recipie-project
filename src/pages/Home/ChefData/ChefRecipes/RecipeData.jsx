@@ -28,7 +28,7 @@ const RecipeData = ({ recipes }) => {
                     <button
                         onClick={handleDisabled}
                         disabled={isDisabled}
-                        className={`bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded-lg ${isDisabled ? "opacity-50 cursor-not-allowed" : ""
+                        className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 text-white font-bold py-2 px-4 rounded-lg ${isDisabled ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                     >
                         {isDisabled ? "Favorite" : "Favorite"}
