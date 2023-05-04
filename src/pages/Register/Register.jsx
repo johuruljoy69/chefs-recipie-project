@@ -56,8 +56,7 @@ const Register = () => {
         console.log(name, email, password, confirm, photoURL);
         setSuccess('')
         setErrorPassword('')
-        toast.success("Wow! Account Create successfully")
-
+        
         if (password.length < 8) {
             setErrorPassword('Please input min 8 character')
             return;
@@ -70,6 +69,11 @@ const Register = () => {
             setErrorPassword('Please provide one special Character')
             return;
         }
+        else if(password !== confirm){
+            setErrorPassword('Confirm password did not match');
+            toast.success("oops! Confirm password did not match")
+            return;
+        }
 
         createUser(email, password)
             .then(result => {
@@ -78,11 +82,12 @@ const Register = () => {
                 setSuccess('Account Create Successfully')
                 form.reset();
                 navigate(from, { replace: true });
+                toast.success("Wow! Account Create successfully")
 
             })
             .catch(error => {
-                console.log(error.message)
-                setSuccess('')
+                console.log(error.message)                
+                setSuccess('') 
             })
     }
 
@@ -97,7 +102,7 @@ const Register = () => {
                     <div className="text-center">
                         <h1 className="text-5xl font-bold mb-5">Register your account now!</h1>
                     </div>
-                    <form onSubmit={handleRegister} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <form onSubmit={handleRegister} className="card flex-shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">

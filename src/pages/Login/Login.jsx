@@ -9,7 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {     
     const { loginUser } = useContext(AuthContext);
-    const [success, setSuccess] = useState('')
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const navigate = useNavigate();
     const location = useLocation()
     // console.log('login page location', location);
@@ -51,7 +52,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         setSuccess('')
-        toast.success("Wow! You Login successfully")
+        setError('')        
 
         loginUser(email, password)
             .then(result => {
@@ -60,9 +61,12 @@ const Login = () => {
                 setSuccess('User Login successfully')
                 form.reset();
                 navigate(from, { replace: true });
+                toast.success("Wow! You Login successfully");
             })
             .catch(error => {
                 console.error(error.message)
+                setError('Email or password did not match');
+                toast.warning("Oops! Invalid Email or Password");              
             })
     }
     return (
@@ -95,6 +99,7 @@ const Login = () => {
 
                             </div>
                             <p className='text-green-500'><small>{success}</small></p>
+                            <p className='text-red-500'><small>{error}</small></p>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                                 <ToastContainer />

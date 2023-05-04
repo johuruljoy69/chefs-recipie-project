@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FcLike } from 'react-icons/fc';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const RecipesCart = ({ recipes }) => {
-    const { id, recipeName, img_url, description, rating, likes } = recipes;
+    const { id, recipeName, img_url, description, rating } = recipes;
 
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -22,8 +23,8 @@ const RecipesCart = ({ recipes }) => {
                 {/* <p><small>{description}</small></p> */}
                 <div className=" md:flex gap-5 items-center space-y-2 justify-between mt-3">
                     <div className='flex items-center'>
-                        <FcLike style={{ fontSize: '1.5rem' }}></FcLike>
-                        <p className='ps-2'>{likes} Likes </p>
+                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                        <p className='ps-2'>{rating} </p>
                     </div>
                     <button
                         onClick={handleDisabled}
