@@ -14,7 +14,7 @@ const Register = () => {
     const { createUser, setReload } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation()
-    // console.log('login page location', location);
+    
     const from = location.state?.from?.pathname || '/home';
 
     const auth = getAuth(app);
@@ -53,7 +53,7 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
         const photoURL = form.photoURL.value;
-        // console.log(name, email, password, confirm, photoURL);
+        
         setSuccess('')
         setErrorPassword('')
 
@@ -79,7 +79,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                // console.log(loggedUser);
+                console.log(loggedUser);
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photoURL
                 }).then(() => {
