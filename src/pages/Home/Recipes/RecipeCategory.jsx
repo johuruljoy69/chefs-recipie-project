@@ -4,7 +4,7 @@ import CategoryCart from './CategoryCart';
 const RecipeCategory = () => {
     const [categoryData, setCategoryData] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/recipe-category')
+        fetch('https://b7a10-chef-recipe-hunter-server-side-johuruljoy69.vercel.app/recipe-category')
             .then(res => res.json())
             .then(data => setCategoryData(data))
             .catch(error => error.message)

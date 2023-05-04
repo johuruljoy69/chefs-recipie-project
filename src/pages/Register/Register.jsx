@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -53,10 +53,10 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
         const photoURL = form.photoURL.value;
-        console.log(name, email, password, confirm, photoURL);
+        // console.log(name, email, password, confirm, photoURL);
         setSuccess('')
         setErrorPassword('')
-        
+
         if (password.length < 8) {
             setErrorPassword('Please input min 8 character')
             return;
@@ -69,16 +69,24 @@ const Register = () => {
             setErrorPassword('Please provide one special Character')
             return;
         }
-        else if(password !== confirm){
+        else if (password !== confirm) {
             setErrorPassword('Confirm password did not match');
             toast.success("oops! Confirm password did not match")
             return;
         }
 
+
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+                // console.log(loggedUser);
+                updateProfile(auth.currentUser, {
+                    displayName: name, photoURL: photoURL
+                }).then(() => {
+                    
+                }).catch((error) => {
+
+                })
                 setSuccess('Account Create Successfully')
                 form.reset();
                 navigate(from, { replace: true });
@@ -86,8 +94,8 @@ const Register = () => {
 
             })
             .catch(error => {
-                console.log(error.message)                
-                setSuccess('') 
+                console.log(error.message)
+                setSuccess('')
             })
     }
 
