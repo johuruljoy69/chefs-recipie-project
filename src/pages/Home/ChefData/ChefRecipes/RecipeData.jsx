@@ -4,26 +4,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
-const RecipesCart = ({ recipes }) => {
-    const { id, recipeName, img_url, description, rating } = recipes;
-
+const RecipeData = ({ recipes }) => {
+    const { likes, recipeName, img_url, ingredients, cookingMethod, rating } = recipes;
     const [isDisabled, setIsDisabled] = useState(false);
-
     const handleDisabled = () => {
+        toast.success("Wow! You add Favorite successfully")
         setIsDisabled(true)
-        toast.success("Wow! Favorite added successfully")
-        console.log(toast);
     }
 
     return (
         <div className="card w-100 h-100 bg-base-100 border">
-            <figure><img className='w-100 rounded' src={img_url} alt="Shoes" /></figure>
+            <figure><img className='w-100' src={img_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{recipeName}</h2>
-                <p><small>{description}</small></p>
+                <p><small><span className='font-semibold pb-3'>Ingredients:</span> {ingredients}</small> </p>
+                <p><small><span className='font-semibold pb-3'>CookingMethod:</span> {cookingMethod}</small> </p>
+
                 <div className=" md:flex gap-5 items-center space-y-2 justify-between mt-3">
                     <div className='flex items-center'>
-                    <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+                        <Rating style={{ maxWidth: 100 }} value={rating} readOnly />
                         <p className='ps-2'>{rating} </p>
                     </div>
                     <button
@@ -42,4 +41,4 @@ const RecipesCart = ({ recipes }) => {
     );
 };
 
-export default RecipesCart;
+export default RecipeData;

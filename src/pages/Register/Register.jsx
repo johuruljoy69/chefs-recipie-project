@@ -11,7 +11,7 @@ const Register = () => {
     const [errorPassword, setErrorPassword] = useState('')
     const [success, setSuccess] = useState('');
     const [accepted, setAccepted] = useState(false)
-    const { createUser } = useContext(AuthContext);
+    const { createUser, setReload } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation()
     // console.log('login page location', location);
@@ -71,7 +71,7 @@ const Register = () => {
         }
         else if (password !== confirm) {
             setErrorPassword('Confirm password did not match');
-            toast.success("oops! Confirm password did not match")
+            toast.warning("oops! Confirm password did not match")
             return;
         }
 
@@ -83,7 +83,7 @@ const Register = () => {
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photoURL
                 }).then(() => {
-                    
+                    setReload(new Date().getTime());
                 }).catch((error) => {
 
                 })

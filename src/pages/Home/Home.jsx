@@ -4,10 +4,11 @@ import PopularRecipe from './Recipes/PopularRecipe';
 import RecipeCategory from './Recipes/RecipeCategory';
 
 
+
 const Home = () => {
 
     return (
-        <div className=''>
+        <div className=''>            
             <div style={{
                 backgroundImage: `url("https://i.ibb.co/zxmnMv7/Banner-img-2.jpg")`, backgroundSize: 'cover',
                 backgroundPosition: 'center center',

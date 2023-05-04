@@ -16,6 +16,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../components/ErrorPage";
+import Recipes from "../pages/Home/ChefData/ChefRecipes/Recipes";
 
 
 const router = createBrowserRouter([
@@ -70,7 +71,8 @@ const router = createBrowserRouter([
         path: ':id',
         element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`https://b7a10-chef-recipe-hunter-server-side-johuruljoy69.vercel.app/chefs/${params.id}`)
-      }
+      },
+      
     ]
   }
 ]);

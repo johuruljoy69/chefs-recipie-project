@@ -8,9 +8,10 @@ const About = () => {
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat',
             }}  >
-                <div className='container mx-auto pt-24 pb-24'>
-                    <h2 className='text-center lg:text-8xl text-6xl text-white font-bold'>About JS FoodHub</h2>
-                    <p className='text-center lg:text-2xl font-semibold text-purple-900 mx-auto border mt-7 w-10/12'>JS FoodHub Restaurant is a physical establishment that offers delicious food and drinks to its customers. The restaurant is part of the JS FoodHub brand, which also includes the online food ordering platform discussed earlier.</p>
+                <div className='container mx-auto text-center pt-12 pb-12'>
+                    <h2 className='text-center lg:text-8xl text-6xl text-white font-bold'>JS FoodHub Blog</h2>
+                    <p className='text-center lg:text-2xl font-semibold text-purple-900 bg-sky-50 opacity-60 mx-auto rounded-xl p-3 mt-7 w-10/12'>JS FoodHub Restaurant is a physical establishment that offers delicious food and drinks to its customers. The restaurant is part of the JS FoodHub brand, which also includes the online food ordering platform discussed earlier.</p>
+                    <button className='px-5 py-2 text-white font-semibold rounded-lg bg-purple-700 hover:bg-purple-900 mt-6 '>View Recipes</button>
                 </div>
             </div>
             <div className='container mx-auto mt-12 mb-12'>
@@ -24,7 +25,6 @@ const About = () => {
                     <div className="">
                         <h2 className='text-4xl font-bold text-purple-700 mb-5'>JS FoodHub</h2>
                         <p className=''>JS Food Hub is a trendy restaurant that offers a unique dining experience to its patrons. Located in the heart of the city, this restaurant serves a variety of cuisines that are expertly crafted by their skilled chefs. The restaurant has a modern and chic decor that creates a welcoming and comfortable atmosphere. Their menu includes a range of dishes, from traditional favorites to innovative fusion cuisine, catering to different dietary needs and preferences. In addition to their delicious food, JS Food Hub also offers a wide selection of beverages, including cocktails, wines, and craft beers. With excellent service and a relaxing ambiance, JS Food Hub is a must-visit restaurant for foodies looking for a delightful culinary adventure.</p>
-
                     </div>
                 </div>
             </div>
