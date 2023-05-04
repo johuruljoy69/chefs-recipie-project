@@ -39,7 +39,7 @@
 
 #Steps-7:
 1. after ready my website push all code in github
-2. then -> firebase init
-3. then -> npm run build
-4. then -> firebase deploy
+2. then -> firebase init ->
+3. then -> npm run build ->
+4. then -> firebase deploy ->
 
