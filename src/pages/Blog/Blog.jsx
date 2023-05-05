@@ -18,8 +18,8 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div className='container mx-auto mt-20 mb-20 grid md:grid-cols-2 gap-6'>
-                <div className="card w-100 h-100 bg-base-100 shadow-xl">
+            <div className='container mx-auto mt-20 mb-20 grid md:grid-cols-2 gap-10'>
+                <div className="card w-100 h-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-105">
                     <figure><img src="https://i.ibb.co/VgGJdVy/React-uncontrolled-and-controlled-components.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2><span className='font-semibold text-purple-700'>Question: </span> What is the differences between uncontrolled and controlled components?</h2>
@@ -27,7 +27,7 @@ const Blog = () => {
                         <button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>View Details</button>
                     </div>
                 </div>
-                <div className="card w-100 h-100 bg-base-100 shadow-xl">
+                <div className="card w-100 h-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-105">
                     <figure><img src="https://i.ibb.co/RjYnYMF/validate-React-props-using-Prop-Types.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2><span className='font-semibold text-purple-700'>Question: </span> How to validate React props using PropTypes?</h2>
@@ -35,7 +35,7 @@ const Blog = () => {
                         <button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500'>View Details</button>
                     </div>
                 </div>
-                <div className="card w-100 h-100 bg-base-100 shadow-xl">
+                <div className="card w-100 h-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-105">
                     <figure><img src="https://i.ibb.co/X8b9Mv3/what-is-the-difference-between-nodejs-and-express-js.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2><span className='font-semibold text-purple-700'>Question: </span> what is the difference between nodejs and express js?</h2>
@@ -43,7 +43,7 @@ const Blog = () => {
                         <button className='px-5 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-yellow-500 '>View Details</button>
                     </div>
                 </div>
-                <div className="card w-100 h-100 bg-base-100 shadow-xl">
+                <div className="card w-100 h-100 bg-base-100 shadow-xl transform transition duration-500 hover:scale-105">
                     <figure><img src="https://i.ibb.co/0Mvpzdj/What-is-a-custom-hook-and-why-will-you-create-a-custom-hook.jpg" alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2><span className='font-semibold text-purple-700'>Question: </span> What is a custom hook, and why will you create a custom hook?</h2>
