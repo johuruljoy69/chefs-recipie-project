@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LazyLoad from 'react-lazy-load';
 import Recipes from './ChefRecipes/Recipes';
+import useTitle from '../../../hooks/useTitle';
 
 
 const ChefDetails = () => {
@@ -12,6 +13,7 @@ const ChefDetails = () => {
     console.log(ChefDetails);
     const { id, name, picture, experience, recipes, likes, bio, description } = ChefDetails;
     const [isDisabled, setIsDisabled] = useState(false);
+    useTitle('Chefs Details ')
 
     const handleDisabled = () => {
         toast.success("Wow! You add Favorite successfully")
