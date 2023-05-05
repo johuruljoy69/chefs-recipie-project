@@ -13,11 +13,11 @@ const RecipeData = ({ recipes }) => {
     }
 
     return (
-        <div className="card w-100 h-100 bg-base-100 border">
-            <figure><img className='w-100' src={img_url} alt="Shoes" /></figure>
+        <div className="card w-100 h-100 bg-base-100 border p-5">
+            <figure><img className='w-100 rounded-lg' src={img_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{recipeName}</h2>
-                <p><small><span className='font-semibold pb-3'>Ingredients:</span> {ingredients}</small> </p>
+                <p><small><span className='font-semibold pb-3'>Ingredients:</span> {ingredients.map(ingredient => <li>{ingredient}</li> )}</small> </p>
                 <p><small><span className='font-semibold pb-3'>CookingMethod:</span> {cookingMethod}</small> </p>
 
                 <div className=" md:flex gap-5 items-center space-y-2 justify-between mt-3">

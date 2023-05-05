@@ -27,6 +27,7 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 toast.success("Wow! Account Create successfully")
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error.message);
@@ -39,6 +40,7 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 toast.success("Wow! Account Create successfully")
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error.message);

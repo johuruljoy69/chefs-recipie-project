@@ -11,7 +11,7 @@ const Recipes = () => {
     }, [])
 
     return (
-        <div className="container mx-auto grid md:grid-cols-3 gap-5 bg-base-100">
+        <div className="container mx-auto grid md:grid-cols-2 gap-5 bg-base-100">
             {
                 recipesData?.slice(0,6)?.map(recipes => <RecipeData
                 key={recipes.recipe_id}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import RecipesCart from './RecipesCart';
 
+
 const PopularRecipe = () => {
     const [recipesData, setRecipesData] = useState([]);
     useEffect(() => {

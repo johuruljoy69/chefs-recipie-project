@@ -20,7 +20,7 @@ const ChefDetails = () => {
 
     return (
         <div className='container mx-auto mt-12 mb-12'>
-            <div className=" w-100 rounded-lg p-10 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
+            <div className=" w-100 rounded-lg p-5 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
                 <LazyLoad height={300} width={400} threshold={0.95}>
                     <img className=' rounded-3xl' src={picture} />
                 </LazyLoad>
