@@ -5,7 +5,7 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const RecipeData = ({ recipes }) => {
-    const { likes, recipeName, img_url, ingredients, cookingMethod, rating } = recipes;
+    const { recipe_id, recipeName, img_url, ingredients, cookingMethod, rating } = recipes;
     const [isDisabled, setIsDisabled] = useState(false);
     const handleDisabled = () => {
         toast.success("Wow! You add Favorite successfully")
@@ -17,7 +17,7 @@ const RecipeData = ({ recipes }) => {
             <figure><img className='w-100 rounded-lg' src={img_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{recipeName}</h2>
-                <p><small><span className='font-semibold pb-3'>Ingredients:</span> {ingredients.map(ingredient => <li>{ingredient}</li> )}</small> </p>
+                <p><small><span className='font-semibold pb-3'>Ingredients:</span> {ingredients?.map(ingredient => <li key={ingredient.recipe_id} ingredient={ingredient}>{ingredient}</li> )}</small> </p>
                 <p><small><span className='font-semibold pb-3'>CookingMethod:</span> {cookingMethod}</small> </p>
 
                 <div className=" md:flex gap-5 items-center space-y-2 justify-between mt-3">
