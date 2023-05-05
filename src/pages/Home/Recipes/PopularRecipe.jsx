@@ -20,7 +20,7 @@ const PopularRecipe = () => {
                 backgroundPosition: 'center center',
                 backgroundRepeat: 'no-repeat',
             }}>
-                <div className='container mx-auto grid lg:grid-cols-3 gap-6 pt-10 pb-10'>
+                <div className='container mx-auto grid lg:grid-cols-3 gap-10 pt-10 pb-10'>
                     {recipesData?.map((recipes) => <RecipesCart
                         key={recipes.recipe_id}
                         recipes={recipes}

@@ -8,7 +8,7 @@ const RecipesCart = ({ recipes }) => {
     const { id, recipeName, img_url, description, rating, cookingTime } = recipes;
 
     return (
-        <div className="card w-100 h-100 bg-base-100 border p-2">
+        <div className="card w-100 h-100 bg-base-100 border p-2 transform transition duration-500 hover:scale-105">
             <figure><img className='w-100 rounded' src={img_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{recipeName}</h2>

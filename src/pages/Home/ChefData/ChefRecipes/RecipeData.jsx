@@ -13,7 +13,7 @@ const RecipeData = ({ recipes }) => {
     }
 
     return (
-        <div className="card w-100 h-100 bg-base-100 border p-5">
+        <div className="card w-100 h-100 bg-base-100 border p-5 transform transition duration-500 hover:scale-105">
             <figure><img className='w-100 rounded-lg' src={img_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{recipeName}</h2>

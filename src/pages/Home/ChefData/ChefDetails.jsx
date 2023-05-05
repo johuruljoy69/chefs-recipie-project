@@ -22,7 +22,7 @@ const ChefDetails = () => {
         <div className='container mx-auto mt-12 mb-12'>
             <div className=" w-100 rounded-lg p-5 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">
                 <LazyLoad height={300} width={400} threshold={0.95}>
-                    <img className=' rounded-3xl' src={picture} />
+                    <img className=' rounded-3xl transform transition duration-500 hover:scale-105' src={picture} />
                 </LazyLoad>
                 {/* <img className='w-80 rounded-3xl' src={picture} /> */}
                 <div className="">

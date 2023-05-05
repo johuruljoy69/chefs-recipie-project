@@ -16,11 +16,11 @@ const About = () => {
             </div>
             <div className='container mx-auto mt-12 mb-12'>
                 <div className="md:flex w-100 p-10 gap-10 items-center space-y-5 bg-base-100">
-                    <div className='grid md:grid-cols-2 gap-5'>
-                        <img className='rounded-lg w-100' src="https://i.ibb.co/JqDBF5f/Desserts.jpg" alt="" />
-                        <img className='rounded-lg w-100' src="https://i.ibb.co/WcDKs1k/Vegetarian.jpg" alt="" />
-                        <img className='rounded-lg w-100' src="https://i.ibb.co/n8y0vVn/Chicken.jpg" alt="" />
-                        <img className='rounded-lg w-100' src="https://i.ibb.co/mzSKX7T/Beef.jpg" alt="" />
+                    <div className='grid md:grid-cols-2 gap-5 '>
+                        <img className='rounded-lg w-100 transform transition duration-500 hover:scale-110' src="https://i.ibb.co/JqDBF5f/Desserts.jpg" alt="" />
+                        <img className='rounded-lg w-100 transform transition duration-500 hover:scale-110' src="https://i.ibb.co/WcDKs1k/Vegetarian.jpg" alt="" />
+                        <img className='rounded-lg w-100 transform transition duration-500 hover:scale-110' src="https://i.ibb.co/n8y0vVn/Chicken.jpg" alt="" />
+                        <img className='rounded-lg w-100 transform transition duration-500 hover:scale-110' src="https://i.ibb.co/mzSKX7T/Beef.jpg" alt="" />
                     </div>
                     <div className="">
                         <h2 className='text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-pink-600 mb-5'>JS FoodHub</h2>

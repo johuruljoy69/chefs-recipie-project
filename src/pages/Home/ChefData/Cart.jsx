@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Cart = ({ chef }) => {
     const { id, name, picture, experience, recipes, likes } = chef;
     return (
-        <div className="card card-compact h-100 shadow-xl">
-            <Link to={`/chefs/${id}`}><img className='h-100' src={picture} alt="Shoes" /></Link>
+        <div className="card card-compact h-100 shadow-xl transform transition duration-500 hover:scale-105" >
+            <Link to={`/chefs/${id}`}><img className='h-100' src={picture} alt="" /></Link>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p><span className='font-semibold'>Year of experience:</span> <span className='font-semibold text-purple-700 ps-3'>{experience}</span> </p>
