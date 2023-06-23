@@ -7,7 +7,7 @@
 3. The website is responsive and all the data is integrated with the backend
 ## Technology used
 
-### • HTML5/CSS3 • Tailwind CSS • Bootstrap • React Bootstrap • JavaScript • flow chart • React.js • Next.js
+### • HTML5/CSS3 • Tailwind CSS • Bootstrap • React Bootstrap • JavaScript • flow chart • React.js
 
 ### React Router • Firebase • Rest API • React Query • Node.js • Express.js • MongoDB
 
