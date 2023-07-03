@@ -1,6 +1,6 @@
 # JS FoodHub | Top Chefs Food Website 
 # Live Website Link: https://js-foodhub-project.web.app/home
-# Server Link: [https://js-foodhub-project.web.app/home](https://github.com/johuruljoy69/chefs-recipie-project-server)
+# Server Link: https://github.com/johuruljoy69/chefs-recipie-project-server
 
 ## Features
 1. Chefs can add food items to the website. Also can Update/delete the food items.
